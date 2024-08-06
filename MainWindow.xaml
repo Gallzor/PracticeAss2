@@ -11,6 +11,18 @@
         <Label Content="Your age:" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top"/>
         <Label Content="" Name="priceOfTicketLabel" HorizontalAlignment="Left" Margin="30,64,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Get price" Name="ticketPriceButton" Click="TicketPriceButton_Click" HorizontalAlignment="Left" Margin="172,34,0,0" VerticalAlignment="Top" Height="43" Width="67"/>
+        <Button Content="" Name="throwDiceButton" Click="ThrowDiceButton_Click" HorizontalAlignment="Left" Margin="30,119,0,0" VerticalAlignment="Top" Height="38" Width="100"/>
+        <Label Content="0" Name="countAmountThrownLabel" HorizontalAlignment="Left" Margin="149,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="" Name="currentAmountWonLabel" HorizontalAlignment="Left" Margin="22,202,0,0" VerticalAlignment="Top" Width="217"/>
+        <Label Content="" Name="thrownDiceOneLabel" HorizontalAlignment="Left" Margin="22,171,0,0" VerticalAlignment="Top"/>
+        <Label Content="" Name="thrownDiceTwoLabel" HorizontalAlignment="Left" Margin="93,171,0,0" VerticalAlignment="Top"/>
+        <Label Content="" Name="thrownDiceThreeLabel" HorizontalAlignment="Left" Margin="168,171,0,0" VerticalAlignment="Top"/>
+        <Button Content="1" Name="faultNumberOneButton" Click="FaultNumberOneButton_Click" HorizontalAlignment="Left" Margin="18,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
+        <Button Content="2" Name="faultNumberTwoButton" Click="FaultNumberTwoButton_Click" HorizontalAlignment="Left" Margin="107,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
+        <Button Content="3" Name="faultNumberThreeButton" Click="FaultNumberThreeButton_Click" HorizontalAlignment="Left" Margin="190,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
+        <Label Content="" Name="resultCombinationFaultLabel" HorizontalAlignment="Left" Margin="23,0,0,0" VerticalAlignment="Center" Width="230"/>
+        <Label Content="" Name="enteredFaultNumbersLabel" HorizontalAlignment="Left" Margin="23,313,0,0" VerticalAlignment="Top" Width="230"/>
+        <Button Content="Restart" Name="restartFaultButton" Click="RestartFaultButton_Click" HorizontalAlignment="Left" Margin="23,394,0,0" VerticalAlignment="Top" Height="34" Width="229"/>
 
     </Grid>
 </Window>
