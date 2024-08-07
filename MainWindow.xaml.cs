@@ -398,65 +398,69 @@ namespace PracticeAss2
 
         private void GenerateComputerTurn()
         {
-            int computerChoiceStack;
-            int computerChoiceMatches;
 
-            if (_stackThree > 0 && _stackTwo > 0 && _stackOne > 0)
-            {
-                computerChoiceStack = _randomGenMatches.Next(1, 3);
-            }
-            else if (_stackTwo <= 0 && _stackOne > 0 && _stackThree > 0)
-            {
-                computerChoiceStack = _randomGenMatches.Next(0, 2) == 0 ? 1 : 3;
-            }
-            else if (_stackThree <= 0 && _stackTwo > 0 && _stackOne > 0)
-            {
-                computerChoiceStack = _randomGenMatches.Next(1, 2);
-            }    
-            else if (_stackThree > 0 && _stackTwo <= 0 && _stackOne <= 0)
-            {
-                computerChoiceStack = 3;
-            }
-            else if (_stackTwo > 0 && _stackThree <= 0 && _stackOne <= 0)
-            {
-                computerChoiceStack = 2;
-            }
-            else if (_stackOne > 0 && _stackThree <= 0 && _stackTwo <= 0)
-            {
-                computerChoiceStack = 1;
-            }
-            else if (_stackOne <= 0 && _stackTwo > 0 && _stackThree > 0)
-            {
-                computerChoiceStack = _randomGenMatches.Next(2, 3);
-            }
-            else 
-            {
-                computerChoiceStack = 0;
-            }
-
-
-            computerChoiceMatches = _randomGenMatches.Next(1, 200);
+            int computerChoiceStack = SelectComputerChoiceStack();
+            int computerChoiceMatches = _randomGenMatches.Next(1, 200);
             _playerTurn = false;
 
-            switch (computerChoiceStack)
+            SubstractMatchesFromStack(computerChoiceStack, computerChoiceMatches);
+        }
+
+        private void SubstractMatchesFromStack(int choiceStack, int choiceMatches)
+        {
+            switch (choiceStack)
             {
                 case 0:
                     resultMatchesGameLabel.Content = $"All stacks are empty";
                     break;
                 case 1:
-                    _stackOne = _stackOne - computerChoiceMatches;
+                    _stackOne -= choiceMatches;
                     break;
                 case 2:
-                    _stackTwo = _stackTwo - computerChoiceMatches;
+                    _stackTwo -= choiceMatches;
                     break;
                 case 3:
-                    _stackThree = _stackThree - computerChoiceMatches;
+                    _stackThree -= choiceMatches;
                     break;
                 default:
                     resultMatchesGameLabel.Content = $"there are only 3 stacks!!";
                     break;
 
             }
+        }
+
+        private int SelectComputerChoiceStack()
+        {
+            
+            if (_stackThree > 0 && _stackTwo > 0 && _stackOne > 0)
+            {
+                return _randomGenMatches.Next(1, 3);
+            }
+            else if (_stackTwo <= 0 && _stackOne > 0 && _stackThree > 0)
+            {
+                return _randomGenMatches.Next(0, 2) == 0 ? 1 : 3;
+            }
+            else if (_stackThree <= 0 && _stackTwo > 0 && _stackOne > 0)
+            {
+                return _randomGenMatches.Next(1, 2);
+            }
+            else if (_stackThree > 0 && _stackTwo <= 0 && _stackOne <= 0)
+            {
+                return 3;
+            }
+            else if (_stackTwo > 0 && _stackThree <= 0 && _stackOne <= 0)
+            {
+                return 2;
+            }
+            else if (_stackOne > 0 && _stackThree <= 0 && _stackTwo <= 0)
+            {
+                return 1;
+            }
+            else if (_stackOne <= 0 && _stackTwo > 0 && _stackThree > 0)
+            {
+                return _randomGenMatches.Next(2, 3);
+            }
+                return 0;
         }
 
         private void GeneratePlayerTurn()
@@ -468,23 +472,9 @@ namespace PracticeAss2
             playerChoiceMatches = Convert.ToInt32(playerChoiceMatchesTextBox.Text);
             _playerTurn = true;
 
-            if (playerChoiceStack == 1) 
-            {
-                _stackOne = _stackOne - playerChoiceMatches;
-            }
-            else if (playerChoiceStack == 2)
-            {
-                _stackTwo = _stackTwo - playerChoiceMatches;
-            }
-            else if(playerChoiceStack == 3)
-            {
-                _stackThree = _stackThree - playerChoiceMatches;
-            }
-            else
-            {
-                resultMatchesGameLabel.Content = $"there are only 3 stacks!!";
-            }
+            SubstractMatchesFromStack(playerChoiceStack, playerChoiceMatches);
         }
+
         private void DecideGameResultByTurn()
         {
             if (_stackOne <= 0 && _stackTwo <= 0 && _stackThree <= 0)
