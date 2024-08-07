@@ -23,6 +23,36 @@
         <Label Content="" Name="resultCombinationFaultLabel" HorizontalAlignment="Left" Margin="23,0,0,0" VerticalAlignment="Center" Width="230"/>
         <Label Content="" Name="enteredFaultNumbersLabel" HorizontalAlignment="Left" Margin="23,313,0,0" VerticalAlignment="Top" Width="230"/>
         <Button Content="Restart" Name="restartFaultButton" Click="RestartFaultButton_Click" HorizontalAlignment="Left" Margin="23,394,0,0" VerticalAlignment="Top" Height="34" Width="229"/>
+        <Button Content="Rock" Name="rockButton" Click="RockButton_Click" HorizontalAlignment="Left" Margin="27,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
+        <Button Content="Paper" Name="paperButton" Click="PaperButton_Click" HorizontalAlignment="Left" Margin="107,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
+        <Button Content="Scissors" Name="scissorsButton" Click="ScissorsButton_Click" HorizontalAlignment="Left" Margin="191,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
+        <Label Content="" Name="resultChosenOptionsLabel" HorizontalAlignment="Left" Margin="30,565,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label Content="" Name="endResultGameLabel" HorizontalAlignment="Left" Margin="30,611,0,0" VerticalAlignment="Top" Width="222"/>
+        <Rectangle HorizontalAlignment="Left" Height="704" Margin="9,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="280"/>
+        <Rectangle HorizontalAlignment="Left" Height="303" Margin="289,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
+        <TextBlock HorizontalAlignment="Left" Name="calculatorTotalTextBlock" Margin="308,39,0,0" TextWrapping="Wrap" FontSize="20" TextAlignment="Right" Background="LightGray" VerticalAlignment="Top" Height="31" Width="205"/>
+        <Button Content="1" Name="calculatorOneButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="2" Name="calculatorTwoButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="368,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="+" Name="calculatorAddButton" Click="CalculatorOperatorButton_Click"  HorizontalAlignment="Left" Margin="479,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="3" Name="calculatorThreeButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="427,102,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="4" Name="calculatorFourButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="5" Name="calculatorFiveButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="368,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="6" Name="calculatorSixButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="427,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="-" Name="calculatorSubButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="479,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="7" Name="calculatorSevenButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="8" Name="calculatorEightButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="368,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="9" Name="calculatorNineButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="427,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="=" Name="calculatorEqualsButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="479,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="0" Name="calculatorZeroButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,255,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
+        <Button Content="Clear" Name="calculatorClearButton" Click="CalculatorClearButton_Click" HorizontalAlignment="Left" Margin="427,255,0,0" VerticalAlignment="Top" Height="37" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Margin="393,362,0,0" TextWrapping="Wrap" Name="playerChoiceStackTextBox" VerticalAlignment="Top" Width="58" Height="28"/>
+        <Label Content="Take from which stack?" HorizontalAlignment="Left" Margin="347,326,0,0" VerticalAlignment="Top"/>
+        <Label Content="How many matches?" HorizontalAlignment="Left" Margin="356,402,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox HorizontalAlignment="Left" Margin="393,447,0,0" Name="playerChoiceMatchesTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="58" Height="28"/>
+        <Button Content="Play!" HorizontalAlignment="Left" Name="playMatchesGameButton" Click="PlayMatchesGameButton_Click" Margin="356,496,0,0" VerticalAlignment="Top" Width="124"/>
+        <Label Content="" Name="resultMatchesGameLabel" HorizontalAlignment="Left" Margin="347,534,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="" Name="stackThreeCountLabel" HorizontalAlignment="Left" Margin="484,490,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="222" Margin="290,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
 
     </Grid>
 </Window>

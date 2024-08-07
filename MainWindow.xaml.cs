@@ -34,7 +34,9 @@ namespace PracticeAss2
             enteredFaultNumbersLabel.Content = $"Please press a number.";
             resultCombinationFaultLabel.Content = $"You have not clicked a number.";
             _faultCombinationPressed = "";
-    }
+
+            FillStacksWithMatches();
+        }
 
         private void TicketPriceButton_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +55,7 @@ namespace PracticeAss2
         {
             if (age >= 5 && age <= 12)
             {
-               return (ticketPrice / 2).ToString();
+                return (ticketPrice / 2).ToString();
             }
             else if (age > 13 && age <= 54)
             {
@@ -144,6 +146,8 @@ namespace PracticeAss2
             }
         }
 
+        //CRACK THE FAULT ASS
+
         private string _clickedFaultNumberOne = "1";
         private string _clickedFaultNumberTwo = "2";
         private string _clickedFaultNumberThree = "3";
@@ -189,14 +193,14 @@ namespace PracticeAss2
 
         private void ExceedMaximumTries()
         {
-            if(_countPressedFaultNumbers == 6 )
+            if (_countPressedFaultNumbers == 6)
             {
                 RestartFaultGame("Game Over");
                 _countPressedFaultNumbers = 0;
 
             }
         }
-        
+
 
         private void RestartFaultButton_Click(object sender, RoutedEventArgs e)
         {
@@ -209,6 +213,319 @@ namespace PracticeAss2
             enteredFaultNumbersLabel.Content = $"Please press a number.";
             resultCombinationFaultLabel.Content = $"{resultFaultLabel}.";
             _faultCombinationPressed = "";
+        }
+
+        //ROCK, PAPER, SCISSORS GAME
+
+        Random _randomGameGen = new Random();
+        private const string PAPER_CHOICE = "Paper";
+        private const string ROCK_CHOICE = "Rock";
+        private const string SCISSOR_CHOICE = "Scissor";
+        private string playerChoice;
+        private string computerChoice;
+
+        private void PaperButton_Click(object sender, RoutedEventArgs e)
+        {
+            playerChoice = PAPER_CHOICE;
+            GenerateComputerChoice();
+            ShowChosenGameOptions();
+            CompareChosenGameOptions();
+        }
+
+        private void RockButton_Click(object sender, RoutedEventArgs e)
+        {
+            playerChoice = ROCK_CHOICE;
+            GenerateComputerChoice();
+            ShowChosenGameOptions();
+            CompareChosenGameOptions();
+        }
+
+        private void ScissorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            playerChoice = SCISSOR_CHOICE;
+            GenerateComputerChoice();
+            ShowChosenGameOptions();
+            CompareChosenGameOptions();
+        }
+
+        private void CompareChosenGameOptions()
+        {
+            if ((playerChoice == ROCK_CHOICE && computerChoice == SCISSOR_CHOICE) ||
+               (playerChoice == SCISSOR_CHOICE && computerChoice == PAPER_CHOICE) ||
+               (playerChoice == PAPER_CHOICE && computerChoice == ROCK_CHOICE))
+            {
+                endResultGameLabel.Content = "You have won!";
+            }
+
+            else if ((playerChoice == ROCK_CHOICE && computerChoice == ROCK_CHOICE) ||
+                    (playerChoice == SCISSOR_CHOICE && computerChoice == SCISSOR_CHOICE) ||
+                    (playerChoice == PAPER_CHOICE && computerChoice == PAPER_CHOICE))
+            {
+                endResultGameLabel.Content = "It's a tie!";
+            }
+            else
+            {
+                endResultGameLabel.Content = "You have lost!";
+            }
+        }
+
+        private void ShowChosenGameOptions()
+        {
+            resultChosenOptionsLabel.Content = $"Player: {playerChoice}. Opponent: {computerChoice}";
+        }
+        private void GenerateComputerChoice()
+        {
+            int randomNumber = _randomGameGen.Next(1, 3);
+
+            switch (randomNumber)
+            {
+                case 1:
+                    computerChoice = ROCK_CHOICE;
+                    break;
+                case 2:
+                    computerChoice = PAPER_CHOICE;
+                    break;
+                case 3:
+                    computerChoice = SCISSOR_CHOICE;
+                    break;
+            }
+        }
+
+        //CALCULATOR ASS
+
+        private string calculatorTotal = string.Empty;
+        private string calculatorOperator = string.Empty;
+        private string calculatorFirstInput = string.Empty;
+        private string calculatorSecondInput = string.Empty;
+        private void CalculatorNumberButton_Click(object sender, RoutedEventArgs e)
+        {
+            var clickedButton = (Button)sender;
+            calculatorTotal += clickedButton.Content;
+            UpdateCalculatorTotal(calculatorTotal);
+        }
+
+        private void CalculatorOperatorButton_Click(object sender, RoutedEventArgs e)
+        {
+            var clickedButton = (Button)sender;
+            string clickedOperator = clickedButton.Content.ToString();
+
+            if (clickedOperator == "+" || clickedOperator == "-")
+            {
+                calculatorOperator = clickedOperator;
+                calculatorFirstInput = calculatorTotal;
+                ClearCalculatorTotal();
+            }
+            else if (clickedOperator == "=")
+            {
+                calculatorSecondInput = calculatorTotal;
+                PerformCalculation();
+            }
+        }
+
+        private void PerformCalculation()
+        {
+            double firstNumber = Convert.ToDouble(calculatorFirstInput);
+            double secondNumber = Convert.ToDouble(calculatorSecondInput);
+            double result = 0;
+
+            switch (calculatorOperator)
+            {
+                case "+":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    result = firstNumber - secondNumber;
+                    break;
+            }
+
+            calculatorTotal = result.ToString();
+            UpdateCalculatorTotal(calculatorTotal);
+            ClearCalculatorInputs();
+        }
+
+        private void CalculatorClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            ClearCalculatorTotal();
+        }
+
+        private void UpdateCalculatorTotal(string calculatorTotal)
+        {
+            calculatorTotalTextBlock.Text = calculatorTotal;
+        }
+
+        private void ClearCalculatorTotal()
+        {
+            calculatorTotal = string.Empty;
+            UpdateCalculatorTotal(string.Empty);
+        }
+        private void ClearCalculatorInputs()
+        {
+            calculatorFirstInput = string.Empty;
+            calculatorSecondInput = string.Empty;
+            calculatorOperator = string.Empty;
+        }
+
+        // NIM GAME (clear matches from 3 stacks) ASS
+
+        private int _stackOne = 0;
+        private int _stackTwo = 0;
+        private int _stackThree = 0;
+        Random _randomGenMatches = new Random();
+        private bool _playerTurn;
+        private bool _isGameOver;
+
+        private void PlayMatchesGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!_isGameOver)
+            {
+                GenerateComputerTurn();
+
+                DecideGameResultByTurn();
+                
+                if (!_playerTurn && !_isGameOver)
+                {
+                    GeneratePlayerTurn();
+                    DecideGameResultByTurn();
+                   
+                }
+                if (_isGameOver)
+                {
+                    _isGameOver = false;
+                }
+            }
+
+        }
+
+        private void GenerateComputerTurn()
+        {
+            int computerChoiceStack;
+            int computerChoiceMatches;
+
+            if (_stackThree > 0 && _stackTwo > 0 && _stackOne > 0)
+            {
+                computerChoiceStack = _randomGenMatches.Next(1, 3);
+            }
+            else if (_stackTwo <= 0 && _stackOne > 0 && _stackThree > 0)
+            {
+                computerChoiceStack = _randomGenMatches.Next(0, 2) == 0 ? 1 : 3;
+            }
+            else if (_stackThree <= 0 && _stackTwo > 0 && _stackOne > 0)
+            {
+                computerChoiceStack = _randomGenMatches.Next(1, 2);
+            }    
+            else if (_stackThree > 0 && _stackTwo <= 0 && _stackOne <= 0)
+            {
+                computerChoiceStack = 3;
+            }
+            else if (_stackTwo > 0 && _stackThree <= 0 && _stackOne <= 0)
+            {
+                computerChoiceStack = 2;
+            }
+            else if (_stackOne > 0 && _stackThree <= 0 && _stackTwo <= 0)
+            {
+                computerChoiceStack = 1;
+            }
+            else if (_stackOne <= 0 && _stackTwo > 0 && _stackThree > 0)
+            {
+                computerChoiceStack = _randomGenMatches.Next(2, 3);
+            }
+            else 
+            {
+                computerChoiceStack = 0;
+            }
+
+
+            computerChoiceMatches = _randomGenMatches.Next(1, 200);
+            _playerTurn = false;
+
+            switch (computerChoiceStack)
+            {
+                case 0:
+                    resultMatchesGameLabel.Content = $"All stacks are empty";
+                    break;
+                case 1:
+                    _stackOne = _stackOne - computerChoiceMatches;
+                    break;
+                case 2:
+                    _stackTwo = _stackTwo - computerChoiceMatches;
+                    break;
+                case 3:
+                    _stackThree = _stackThree - computerChoiceMatches;
+                    break;
+                default:
+                    resultMatchesGameLabel.Content = $"there are only 3 stacks!!";
+                    break;
+
+            }
+        }
+
+        private void GeneratePlayerTurn()
+        {
+            int playerChoiceMatches;
+            int playerChoiceStack;
+
+            playerChoiceStack = Convert.ToInt32(playerChoiceStackTextBox.Text);
+            playerChoiceMatches = Convert.ToInt32(playerChoiceMatchesTextBox.Text);
+            _playerTurn = true;
+
+            if (playerChoiceStack == 1) 
+            {
+                _stackOne = _stackOne - playerChoiceMatches;
+            }
+            else if (playerChoiceStack == 2)
+            {
+                _stackTwo = _stackTwo - playerChoiceMatches;
+            }
+            else if(playerChoiceStack == 3)
+            {
+                _stackThree = _stackThree - playerChoiceMatches;
+            }
+            else
+            {
+                resultMatchesGameLabel.Content = $"there are only 3 stacks!!";
+            }
+        }
+        private void DecideGameResultByTurn()
+        {
+            if (_stackOne <= 0 && _stackTwo <= 0 && _stackThree <= 0)
+            {
+                if (!_playerTurn)
+                {
+                    resultMatchesGameLabel.Content = $"You have won!!";
+                    _isGameOver = true;
+                    EmptyStacksToDefault();
+                    FillStacksWithMatches();
+                }
+                else
+                {
+                    resultMatchesGameLabel.Content = $"You have lost!!";
+                    _isGameOver = true;
+                    EmptyStacksToDefault();
+                    FillStacksWithMatches();
+                }
+            }
+            else 
+            {
+
+                resultMatchesGameLabel.Content = $"No empty stack yet";
+            }
+        }
+
+        private void FillStacksWithMatches()
+        {
+            if (_stackOne == 0 && _stackTwo == 0 && _stackThree == 0 )
+            {
+                _stackOne = _randomGenMatches.Next(1, 200);
+                _stackTwo = _randomGenMatches.Next(1, 200);
+                _stackThree = _randomGenMatches.Next(1, 200);
+            }
+        }
+
+        private void EmptyStacksToDefault()
+        {
+            _stackOne = 0;
+            _stackTwo = 0;
+            _stackThree = 0;
         }
     }
 }
