@@ -517,5 +517,50 @@ namespace PracticeAss2
             _stackTwo = 0;
             _stackThree = 0;
         }
+
+        //Pseudo-random ass
+        // My way:
+        //Random _randomGenOne = new Random();
+        //Random _randomGenTwo = new Random(); 
+        //Book solution:
+        Random _randomGenOne = new Random(DateTime.Now.Millisecond);
+        Random _randomGenTwo = new Random(DateTime.Now.Millisecond + 1);
+
+
+        private void RandomNumberGeneratorOneButton_Click(object sender, RoutedEventArgs e)
+        {
+            int generatorNumberOne = _randomGenOne.Next(1, 5000);
+            randomNumberGeneratorOneLabel.Content = $"Gen 1 number: {generatorNumberOne}";
+        }
+
+        private void RandomNumberGeneratorTwoButton_Click(object sender, RoutedEventArgs e)
+        {
+            int generatorNumberTwo = _randomGenTwo.Next(1, 5000);
+            randomNumberGeneratorTwoLabel.Content = $"Gen 2 number: {generatorNumberTwo}";
+        }
+
+        //Form ass
+        private void CalculateNettoPriceButton_Click(object sender, RoutedEventArgs e)
+        {
+            double btwAmount;
+            double totalPrice;
+            int netPrice = Convert.ToInt32(nettoPriceTextBox.Text);
+            
+            if (lowRateCheckBox.IsChecked == false)
+            {
+                btwAmount = 21;
+            }
+            else
+            {
+                btwAmount = 6;
+            }
+
+            btwAmount = (netPrice / 100) * btwAmount;
+            totalPrice = netPrice + btwAmount;
+
+            btwPriceTextBox.Text = btwAmount.ToString("F2"); ;
+            totalPriceTextBox.Text = totalPrice.ToString("F2"); ;
+
+        }
     }
 }

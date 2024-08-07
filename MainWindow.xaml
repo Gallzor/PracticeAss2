@@ -17,18 +17,21 @@
         <Label Content="" Name="thrownDiceOneLabel" HorizontalAlignment="Left" Margin="22,171,0,0" VerticalAlignment="Top"/>
         <Label Content="" Name="thrownDiceTwoLabel" HorizontalAlignment="Left" Margin="93,171,0,0" VerticalAlignment="Top"/>
         <Label Content="" Name="thrownDiceThreeLabel" HorizontalAlignment="Left" Margin="168,171,0,0" VerticalAlignment="Top"/>
+
         <Button Content="1" Name="faultNumberOneButton" Click="FaultNumberOneButton_Click" HorizontalAlignment="Left" Margin="18,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
         <Button Content="2" Name="faultNumberTwoButton" Click="FaultNumberTwoButton_Click" HorizontalAlignment="Left" Margin="107,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
         <Button Content="3" Name="faultNumberThreeButton" Click="FaultNumberThreeButton_Click" HorizontalAlignment="Left" Margin="190,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
         <Label Content="" Name="resultCombinationFaultLabel" HorizontalAlignment="Left" Margin="23,0,0,0" VerticalAlignment="Center" Width="230"/>
         <Label Content="" Name="enteredFaultNumbersLabel" HorizontalAlignment="Left" Margin="23,313,0,0" VerticalAlignment="Top" Width="230"/>
         <Button Content="Restart" Name="restartFaultButton" Click="RestartFaultButton_Click" HorizontalAlignment="Left" Margin="23,394,0,0" VerticalAlignment="Top" Height="34" Width="229"/>
+
         <Button Content="Rock" Name="rockButton" Click="RockButton_Click" HorizontalAlignment="Left" Margin="27,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
         <Button Content="Paper" Name="paperButton" Click="PaperButton_Click" HorizontalAlignment="Left" Margin="107,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
         <Button Content="Scissors" Name="scissorsButton" Click="ScissorsButton_Click" HorizontalAlignment="Left" Margin="191,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
         <Label Content="" Name="resultChosenOptionsLabel" HorizontalAlignment="Left" Margin="30,565,0,0" VerticalAlignment="Top" Width="222"/>
         <Label Content="" Name="endResultGameLabel" HorizontalAlignment="Left" Margin="30,611,0,0" VerticalAlignment="Top" Width="222"/>
         <Rectangle HorizontalAlignment="Left" Height="704" Margin="9,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="280"/>
+
         <Rectangle HorizontalAlignment="Left" Height="303" Margin="289,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
         <TextBlock HorizontalAlignment="Left" Name="calculatorTotalTextBlock" Margin="308,39,0,0" TextWrapping="Wrap" FontSize="20" TextAlignment="Right" Background="LightGray" VerticalAlignment="Top" Height="31" Width="205"/>
         <Button Content="1" Name="calculatorOneButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
@@ -45,6 +48,7 @@
         <Button Content="=" Name="calculatorEqualsButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="479,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
         <Button Content="0" Name="calculatorZeroButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,255,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
         <Button Content="Clear" Name="calculatorClearButton" Click="CalculatorClearButton_Click" HorizontalAlignment="Left" Margin="427,255,0,0" VerticalAlignment="Top" Height="37" Width="85"/>
+
         <TextBox HorizontalAlignment="Left" Margin="393,362,0,0" TextWrapping="Wrap" Name="playerChoiceStackTextBox" VerticalAlignment="Top" Width="58" Height="28"/>
         <Label Content="Take from which stack?" HorizontalAlignment="Left" Margin="347,326,0,0" VerticalAlignment="Top"/>
         <Label Content="How many matches?" HorizontalAlignment="Left" Margin="356,402,0,0" VerticalAlignment="Top" Width="132"/>
@@ -52,7 +56,22 @@
         <Button Content="Play!" HorizontalAlignment="Left" Name="playMatchesGameButton" Click="PlayMatchesGameButton_Click" Margin="356,496,0,0" VerticalAlignment="Top" Width="124"/>
         <Label Content="" Name="resultMatchesGameLabel" HorizontalAlignment="Left" Margin="347,534,0,0" VerticalAlignment="Top" Width="123"/>
         <Label Content="" Name="stackThreeCountLabel" HorizontalAlignment="Left" Margin="484,490,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="222" Margin="290,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
+        <Rectangle HorizontalAlignment="Left" Height="265" Margin="290,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
+
+        <Button Content="Button 1" Name="randomNumberGeneratorOneButton" Click="RandomNumberGeneratorOneButton_Click" HorizontalAlignment="Left" Margin="325,669,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
+        <Button Content="Button 2" Name="randomNumberGeneratorTwoButton" Click="RandomNumberGeneratorTwoButton_Click" HorizontalAlignment="Left" Margin="427,669,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
+        <Rectangle HorizontalAlignment="Left" Height="136" Margin="288,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="246"/>
+        <Label Content="" Name="randomNumberGeneratorOneLabel" HorizontalAlignment="Left" Margin="342,593,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label Content="" Name="randomNumberGeneratorTwoLabel" HorizontalAlignment="Left" Margin="342,629,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label Content="Nettoprijs:" HorizontalAlignment="Left" Margin="553,24,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="637,28,0,0" TextWrapping="Wrap" Name="nettoPriceTextBox" VerticalAlignment="Top" Width="120"/>
+        <CheckBox Content="Verlaagd tarief" Name="lowRateCheckBox" HorizontalAlignment="Left" Margin="637,58,0,0" VerticalAlignment="Top" Height="19" Width="120"/>
+        <Label Content="Btw:" HorizontalAlignment="Left" Margin="553,95,0,0" VerticalAlignment="Top" Width="47"/>
+        <Label Content="Totaal:" HorizontalAlignment="Left" Margin="553,138,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Name="btwPriceTextBox" Margin="637,100,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="21" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Name="totalPriceTextBox" Margin="637,143,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="19" Width="120"/>
+        <Button Content="Bereken" Name="calculateNettoPriceButton" Click="CalculateNettoPriceButton_Click" HorizontalAlignment="Left" Margin="674,174,0,0" VerticalAlignment="Top" Height="23" Width="83"/>
+        <Rectangle HorizontalAlignment="Left" Height="229" Margin="532,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
 
     </Grid>
 </Window>
