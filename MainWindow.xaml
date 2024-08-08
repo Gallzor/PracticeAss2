@@ -56,11 +56,11 @@
         <Button Content="Play!" HorizontalAlignment="Left" Name="playMatchesGameButton" Click="PlayMatchesGameButton_Click" Margin="356,496,0,0" VerticalAlignment="Top" Width="124"/>
         <Label Content="" Name="resultMatchesGameLabel" HorizontalAlignment="Left" Margin="347,534,0,0" VerticalAlignment="Top" Width="123"/>
         <Label Content="" Name="stackThreeCountLabel" HorizontalAlignment="Left" Margin="484,490,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="265" Margin="290,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
+        <Rectangle HorizontalAlignment="Left" Height="265" Margin="290,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="242"/>
 
         <Button Content="Button 1" Name="randomNumberGeneratorOneButton" Click="RandomNumberGeneratorOneButton_Click" HorizontalAlignment="Left" Margin="325,669,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
         <Button Content="Button 2" Name="randomNumberGeneratorTwoButton" Click="RandomNumberGeneratorTwoButton_Click" HorizontalAlignment="Left" Margin="427,669,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
-        <Rectangle HorizontalAlignment="Left" Height="136" Margin="288,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="246"/>
+        <Rectangle HorizontalAlignment="Left" Height="136" Margin="288,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="244"/>
         <Label Content="" Name="randomNumberGeneratorOneLabel" HorizontalAlignment="Left" Margin="342,593,0,0" VerticalAlignment="Top" Width="132"/>
         <Label Content="" Name="randomNumberGeneratorTwoLabel" HorizontalAlignment="Left" Margin="342,629,0,0" VerticalAlignment="Top" Width="132"/>
         <Label Content="Nettoprijs:" HorizontalAlignment="Left" Margin="553,24,0,0" VerticalAlignment="Top"/>
@@ -71,7 +71,21 @@
         <TextBlock HorizontalAlignment="Left" Name="btwPriceTextBox" Margin="637,100,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="21" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Name="totalPriceTextBox" Margin="637,143,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="19" Width="120"/>
         <Button Content="Bereken" Name="calculateNettoPriceButton" Click="CalculateNettoPriceButton_Click" HorizontalAlignment="Left" Margin="674,174,0,0" VerticalAlignment="Top" Height="23" Width="83"/>
-        <Rectangle HorizontalAlignment="Left" Height="229" Margin="532,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
+        <Rectangle HorizontalAlignment="Left" Height="229" Margin="532,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
+        <Button Content="" Name="ticTacToeOneButton" Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="560,262,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="" Name="ticTacToeTwoButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="637,262,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="" Name="ticTacToeThreeButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="716,262,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="" Name="ticTacToeFourButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="560,322,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="" Name="ticTacToeFiveButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="637,322,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="" Name="ticTacToeSixButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="716,322,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="" Name="ticTacToeSevenButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="560,381,0,0" VerticalAlignment="Top" Height="50" Width="60" />
+        <Button Content="" Name="ticTacToeEightButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="637,381,0,0" VerticalAlignment="Top" Height="50" Width="60" />
+        <Button Content="" Name="ticTacToeNineButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="716,381,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
+        <Button Content="X" Name="crossButton" Click="GameCrossOrCircleButton_Click" HorizontalAlignment="Left" Margin="613,446,0,0" VerticalAlignment="Top" Height="25" Width="30"/>
+        <Button Content="O" Name="circleButton" Click="GameCrossOrCircleButton_Click" HorizontalAlignment="Left" Margin="686,446,0,0" VerticalAlignment="Top" Height="25" Width="30"/>
+        <Label Content="" Name="statusTicTacToeGameLabel" HorizontalAlignment="Left" Margin="602,485,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Restart!" Name="restartTicTacToeButton" Click="RestartTicTacToeButton_Click" Visibility="Hidden" HorizontalAlignment="Left" Margin="602,520,0,0" VerticalAlignment="Top" Width="130"/>
+        <Rectangle HorizontalAlignment="Left" Height="341" Margin="532,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
 
     </Grid>
 </Window>

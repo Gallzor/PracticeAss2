@@ -36,6 +36,10 @@ namespace PracticeAss2
             _faultCombinationPressed = "";
 
             FillStacksWithMatches();
+
+            _changePlayer = false;
+            DecidePlayerTurn();
+            ShowWhichPlayerTurn();
         }
 
         private void TicketPriceButton_Click(object sender, RoutedEventArgs e)
@@ -381,12 +385,12 @@ namespace PracticeAss2
                 GenerateComputerTurn();
 
                 DecideGameResultByTurn();
-                
+
                 if (!_playerTurn && !_isGameOver)
                 {
                     GeneratePlayerTurn();
                     DecideGameResultByTurn();
-                   
+
                 }
                 if (_isGameOver)
                 {
@@ -431,7 +435,7 @@ namespace PracticeAss2
 
         private int SelectComputerChoiceStack()
         {
-            
+
             if (_stackThree > 0 && _stackTwo > 0 && _stackOne > 0)
             {
                 return _randomGenMatches.Next(1, 3);
@@ -460,7 +464,7 @@ namespace PracticeAss2
             {
                 return _randomGenMatches.Next(2, 3);
             }
-                return 0;
+            return 0;
         }
 
         private void GeneratePlayerTurn()
@@ -494,7 +498,7 @@ namespace PracticeAss2
                     FillStacksWithMatches();
                 }
             }
-            else 
+            else
             {
 
                 resultMatchesGameLabel.Content = $"No empty stack yet";
@@ -503,7 +507,7 @@ namespace PracticeAss2
 
         private void FillStacksWithMatches()
         {
-            if (_stackOne == 0 && _stackTwo == 0 && _stackThree == 0 )
+            if (_stackOne == 0 && _stackTwo == 0 && _stackThree == 0)
             {
                 _stackOne = _randomGenMatches.Next(1, 200);
                 _stackTwo = _randomGenMatches.Next(1, 200);
@@ -545,7 +549,7 @@ namespace PracticeAss2
             double btwAmount;
             double totalPrice;
             int netPrice = Convert.ToInt32(nettoPriceTextBox.Text);
-            
+
             if (lowRateCheckBox.IsChecked == false)
             {
                 btwAmount = 21;
@@ -561,6 +565,119 @@ namespace PracticeAss2
             btwPriceTextBox.Text = btwAmount.ToString("F2"); ;
             totalPriceTextBox.Text = totalPrice.ToString("F2"); ;
 
+        }
+
+        //Tic Tac Toe Game 
+        // _changePlayer = true, is player 1, _changePlayer = false, is player 2
+
+        private string _gameButtonName;
+        private string _storedGameOption;
+        private bool _changePlayer;
+        private string _whichPlayerTurn;
+        private bool _isTicTacToeDone = false;
+        private void StoreTicTacToeOptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            var clickedGameButton = (Button)sender;
+            _gameButtonName = clickedGameButton.Name;
+        }
+
+        private void GameCrossOrCircleButton_Click(object sender, RoutedEventArgs e)
+        {
+            var clickedGameButton = (Button)sender;
+            _storedGameOption += clickedGameButton.Content.ToString();
+            Button targetButton = (Button)this.FindName(_gameButtonName);
+
+            ProcessGameMove(targetButton);
+
+        }
+
+        private void ProcessGameMove(Button targetButton)
+        {
+            if (targetButton != null)
+            {
+                targetButton.Content = _storedGameOption;
+                _storedGameOption = null;
+
+                CalculateGameStateByTurn();
+
+                if (!_isTicTacToeDone)
+                {
+                    DecidePlayerTurn();
+                    ShowWhichPlayerTurn();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void DecidePlayerTurn()
+        {
+            _changePlayer = !_changePlayer;
+            if (_changePlayer)
+            {
+                _whichPlayerTurn = "Player 1";
+            }
+            else
+            {
+                _whichPlayerTurn = "Player 2";
+            }
+        }
+
+        public void ShowWhichPlayerTurn()
+        {
+            statusTicTacToeGameLabel.Content = $"It is {_whichPlayerTurn}'s turn!";
+        }
+
+        public void CalculateGameStateByTurn()
+        {
+            if (
+         (ticTacToeOneButton.Content != null && ticTacToeOneButton.Content.ToString() != "" &&  ticTacToeOneButton.Content == ticTacToeTwoButton.Content && ticTacToeOneButton.Content == ticTacToeThreeButton.Content) ||
+         (ticTacToeOneButton.Content != null && ticTacToeOneButton.Content.ToString() != "" && ticTacToeOneButton.Content == ticTacToeFourButton.Content && ticTacToeOneButton.Content == ticTacToeSevenButton.Content) ||
+         (ticTacToeOneButton.Content != null && ticTacToeOneButton.Content.ToString() != "" && ticTacToeOneButton.Content == ticTacToeFiveButton.Content && ticTacToeOneButton.Content == ticTacToeNineButton.Content) ||
+         (ticTacToeTwoButton.Content != null && ticTacToeTwoButton.Content.ToString() != "" && ticTacToeTwoButton.Content == ticTacToeFiveButton.Content && ticTacToeTwoButton.Content == ticTacToeEightButton.Content) ||
+         (ticTacToeFourButton.Content != null && ticTacToeFourButton.Content.ToString() != "" & ticTacToeFourButton.Content == ticTacToeFiveButton.Content && ticTacToeFourButton.Content == ticTacToeSixButton.Content) ||
+         (ticTacToeThreeButton.Content != null && ticTacToeThreeButton.Content.ToString() != "" && ticTacToeThreeButton.Content == ticTacToeSixButton.Content && ticTacToeThreeButton.Content == ticTacToeNineButton.Content) ||
+         (ticTacToeSevenButton.Content != null && ticTacToeSevenButton.Content.ToString() != "" && ticTacToeSevenButton.Content == ticTacToeEightButton.Content && ticTacToeSevenButton.Content == ticTacToeNineButton.Content)||
+         (ticTacToeThreeButton.Content != null && ticTacToeThreeButton.Content.ToString() != "" && ticTacToeThreeButton.Content == ticTacToeFiveButton.Content && ticTacToeThreeButton.Content == ticTacToeSevenButton.Content)
+               )
+            {
+                statusTicTacToeGameLabel.Content = $"{_whichPlayerTurn} has won!";
+                _isTicTacToeDone = !_isTicTacToeDone;
+                restartTicTacToeButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void HandleGameOverState()
+        {
+            _gameButtonName = null;
+            _changePlayer = true;
+            _storedGameOption = null;
+            _isTicTacToeDone = !_isTicTacToeDone;
+            statusTicTacToeGameLabel.Content = null;
+            _whichPlayerTurn = null;
+            ticTacToeOneButton.Content = null;
+            ticTacToeTwoButton.Content = null;
+            ticTacToeThreeButton.Content = null;
+            ticTacToeFourButton.Content = null;
+            ticTacToeFiveButton.Content = null;
+            ticTacToeSixButton.Content = null;
+            ticTacToeSevenButton.Content = null;
+            ticTacToeEightButton.Content = null;
+            ticTacToeNineButton.Content = null;
+        }
+
+        private void RestartTicTacToeButton_Click(object sender, RoutedEventArgs e)
+        {
+            HandleGameOverState();
+            DecidePlayerTurn();
+            ShowWhichPlayerTurn();
+            restartTicTacToeButton.Visibility = Visibility.Hidden;
         }
     }
 }
