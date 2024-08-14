@@ -802,7 +802,53 @@ namespace PracticeAss2
             MultiplyTableTextBlock.Text = finalResult; 
         }
 
+
         //Fibo ass
+        private void FiboSeriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            string fibo = "";
+            int firstNumber = 0, secondNumber = 1, nextNumber;
+
+            fibo = fibo + firstNumber + " ";
+            fibo = fibo + secondNumber + " ";
+
+            for (int i = 2; i < 20; i++) 
+            {
+                nextNumber = firstNumber + secondNumber;
+                fibo = fibo + nextNumber + " ";
+
+                firstNumber = secondNumber;
+                secondNumber = nextNumber;
+            }
+
+            FiboSeriesLabel.Content = fibo;
+
+        }
+
+
+        // sum of series
+        private void SumOfSeriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            int n = 20; 
+            double sum = 0.0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sum -= 1.0 / i; 
+                }
+                else 
+                {
+                    sum += 1.0 / i; 
+                }
+            }
+
+            string finalResult = $"The sum of the first {n} of the series is: {sum}";
+
+            SumOfSeriesLabel.Content = finalResult;
+        }
+
 
 
     }
