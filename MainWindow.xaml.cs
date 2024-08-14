@@ -718,7 +718,92 @@ namespace PracticeAss2
         // create staircase with X's
         private void DrawTrapButton_Click(object sender, RoutedEventArgs e)
         {
-            string value = "";
+            //string rows = "";
+            int rows = 6;
+            string staircase = "";
+
+            for(int i = 1; i < rows; i++)
+            {
+                for (int c = 1; c <= i; c++) 
+                {
+                    staircase = staircase + "X ";
+                }
+
+                staircase = staircase + "\n";
+            }
+
+            DrawTrapTextBlock.Text = staircase;
+
         }
+
+        //sum of added numbers
+        private void CalculateSumOfLoopButton_Click(object sender, RoutedEventArgs e)
+        {
+            int sum = 0;
+            int n = 0;
+
+            for (int i = 0; i < 40; i++)
+            {
+                sum = n * (n + 1) / 2;
+                n++;
+            }
+
+            SumOfLoopLabel.Content = sum;
+        }
+
+        //Draw ZigZaw ass
+        private void DrawZigZawButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            int rows = 4;
+            string zigZaw = "";
+
+            for (int i = 0; i < 3; i++)
+            {
+               for (int r = 0; r < rows; r++)
+               {
+                  for(int c = 0; c <= r; c++)
+                    {
+                        zigZaw = zigZaw + "S ";
+                    }
+                  zigZaw = zigZaw + "\n";
+               }
+            }
+            DrawZigZawTextBlock.Text = zigZaw;
+        }
+
+        //multiply table ass
+        private void DrawMultiplyTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            int  inputNumber;
+            int calculatedNumber;
+            string multipliedNumber = "";
+            string columns = "";
+
+            inputNumber = Convert.ToInt32(MultiplyTableTextBox.Text);
+
+            for (int i = 1; i <= inputNumber; i++)
+            {
+                multipliedNumber += "\n" + i + "\t"; 
+                for (int c = 1; c <= inputNumber; c++)
+                {
+                    calculatedNumber = i * c;
+                    multipliedNumber += + calculatedNumber + "\t";
+                }
+               
+                multipliedNumber = multipliedNumber + "\n";
+            }
+            for (int c = 1; c <= inputNumber; c++)
+            {
+                columns += "\t" + c;
+            }
+
+            string finalResult = columns + "\n" + multipliedNumber;
+            MultiplyTableTextBlock.Text = finalResult; 
+        }
+
+        //Fibo ass
+
+
     }
 }

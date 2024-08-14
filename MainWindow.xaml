@@ -7,98 +7,118 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="760" Width="1200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="208*"/>
+            <ColumnDefinition Width="963*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
         <TextBox HorizontalAlignment="Left" Margin="30,41,0,0" TextWrapping="Wrap" Name="inputYourAgeTextBox" VerticalAlignment="Top" Width="120"/>
         <Label Content="Your age:" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top"/>
         <Label Content="" Name="priceOfTicketLabel" HorizontalAlignment="Left" Margin="30,64,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Get price" Name="ticketPriceButton" Click="TicketPriceButton_Click" HorizontalAlignment="Left" Margin="172,34,0,0" VerticalAlignment="Top" Height="43" Width="67"/>
+        <Button Content="Get price" Name="ticketPriceButton" Click="TicketPriceButton_Click" HorizontalAlignment="Left" Margin="172,34,0,0" VerticalAlignment="Top" Height="43" Width="67" Grid.ColumnSpan="2"/>
         <Button Content="" Name="throwDiceButton" Click="ThrowDiceButton_Click" HorizontalAlignment="Left" Margin="30,119,0,0" VerticalAlignment="Top" Height="38" Width="100"/>
         <Label Content="0" Name="countAmountThrownLabel" HorizontalAlignment="Left" Margin="149,125,0,0" VerticalAlignment="Top"/>
-        <Label Content="" Name="currentAmountWonLabel" HorizontalAlignment="Left" Margin="22,202,0,0" VerticalAlignment="Top" Width="217"/>
+        <Label Content="" Name="currentAmountWonLabel" HorizontalAlignment="Left" Margin="22,202,0,0" VerticalAlignment="Top" Width="217" Grid.ColumnSpan="2"/>
         <Label Content="" Name="thrownDiceOneLabel" HorizontalAlignment="Left" Margin="22,171,0,0" VerticalAlignment="Top"/>
         <Label Content="" Name="thrownDiceTwoLabel" HorizontalAlignment="Left" Margin="93,171,0,0" VerticalAlignment="Top"/>
         <Label Content="" Name="thrownDiceThreeLabel" HorizontalAlignment="Left" Margin="168,171,0,0" VerticalAlignment="Top"/>
 
         <Button Content="1" Name="faultNumberOneButton" Click="FaultNumberOneButton_Click" HorizontalAlignment="Left" Margin="18,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
         <Button Content="2" Name="faultNumberTwoButton" Click="FaultNumberTwoButton_Click" HorizontalAlignment="Left" Margin="107,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
-        <Button Content="3" Name="faultNumberThreeButton" Click="FaultNumberThreeButton_Click" HorizontalAlignment="Left" Margin="190,250,0,0" VerticalAlignment="Top" Height="47" Width="62"/>
-        <Label Content="" Name="resultCombinationFaultLabel" HorizontalAlignment="Left" Margin="23,0,0,0" VerticalAlignment="Center" Width="230"/>
-        <Label Content="" Name="enteredFaultNumbersLabel" HorizontalAlignment="Left" Margin="23,313,0,0" VerticalAlignment="Top" Width="230"/>
-        <Button Content="Restart" Name="restartFaultButton" Click="RestartFaultButton_Click" HorizontalAlignment="Left" Margin="23,394,0,0" VerticalAlignment="Top" Height="34" Width="229"/>
+        <Button Content="3" Name="faultNumberThreeButton" Click="FaultNumberThreeButton_Click" HorizontalAlignment="Left" Margin="190,250,0,0" VerticalAlignment="Top" Height="47" Width="62" Grid.ColumnSpan="2"/>
+        <Label Content="" Name="resultCombinationFaultLabel" HorizontalAlignment="Left" Margin="23,0,0,0" VerticalAlignment="Center" Width="230" Grid.ColumnSpan="2"/>
+        <Label Content="" Name="enteredFaultNumbersLabel" HorizontalAlignment="Left" Margin="23,313,0,0" VerticalAlignment="Top" Width="230" Grid.ColumnSpan="2"/>
+        <Button Content="Restart" Name="restartFaultButton" Click="RestartFaultButton_Click" HorizontalAlignment="Left" Margin="23,394,0,0" VerticalAlignment="Top" Height="34" Width="229" Grid.ColumnSpan="2"/>
 
         <Button Content="Rock" Name="rockButton" Click="RockButton_Click" HorizontalAlignment="Left" Margin="27,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
         <Button Content="Paper" Name="paperButton" Click="PaperButton_Click" HorizontalAlignment="Left" Margin="107,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
-        <Button Content="Scissors" Name="scissorsButton" Click="ScissorsButton_Click" HorizontalAlignment="Left" Margin="191,477,0,0" VerticalAlignment="Top" Height="58" Width="62"/>
-        <Label Content="" Name="resultChosenOptionsLabel" HorizontalAlignment="Left" Margin="30,565,0,0" VerticalAlignment="Top" Width="222"/>
-        <Label Content="" Name="endResultGameLabel" HorizontalAlignment="Left" Margin="30,611,0,0" VerticalAlignment="Top" Width="222"/>
-        <Rectangle HorizontalAlignment="Left" Height="704" Margin="9,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="280"/>
+        <Button Content="Scissors" Name="scissorsButton" Click="ScissorsButton_Click" HorizontalAlignment="Left" Margin="191,477,0,0" VerticalAlignment="Top" Height="58" Width="62" Grid.ColumnSpan="2"/>
+        <Label Content="" Name="resultChosenOptionsLabel" HorizontalAlignment="Left" Margin="30,565,0,0" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="2"/>
+        <Label Content="" Name="endResultGameLabel" HorizontalAlignment="Left" Margin="30,611,0,0" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="711" Margin="9,0,0,20" Stroke="Black" VerticalAlignment="Bottom" Width="280" Grid.ColumnSpan="2"/>
 
-        <Rectangle HorizontalAlignment="Left" Height="303" Margin="289,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
-        <TextBlock HorizontalAlignment="Left" Name="calculatorTotalTextBlock" Margin="308,39,0,0" TextWrapping="Wrap" FontSize="20" TextAlignment="Right" Background="LightGray" VerticalAlignment="Top" Height="31" Width="205"/>
-        <Button Content="1" Name="calculatorOneButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="2" Name="calculatorTwoButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="368,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="+" Name="calculatorAddButton" Click="CalculatorOperatorButton_Click"  HorizontalAlignment="Left" Margin="479,101,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="3" Name="calculatorThreeButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="427,102,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="4" Name="calculatorFourButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="5" Name="calculatorFiveButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="368,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="6" Name="calculatorSixButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="427,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="-" Name="calculatorSubButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="479,151,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="7" Name="calculatorSevenButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="8" Name="calculatorEightButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="368,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="9" Name="calculatorNineButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="427,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="=" Name="calculatorEqualsButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="479,202,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="0" Name="calculatorZeroButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="308,255,0,0" VerticalAlignment="Top" Height="37" Width="34"/>
-        <Button Content="Clear" Name="calculatorClearButton" Click="CalculatorClearButton_Click" HorizontalAlignment="Left" Margin="427,255,0,0" VerticalAlignment="Top" Height="37" Width="85"/>
+        <Rectangle HorizontalAlignment="Left" Height="303" Margin="81,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="245" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Name="calculatorTotalTextBlock" Margin="100,39,0,0" TextWrapping="Wrap" FontSize="20" TextAlignment="Right" Background="LightGray" VerticalAlignment="Top" Height="31" Width="205" Grid.Column="1"/>
+        <Button Content="1" Name="calculatorOneButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="100,101,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="2" Name="calculatorTwoButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="160,101,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="+" Name="calculatorAddButton" Click="CalculatorOperatorButton_Click"  HorizontalAlignment="Left" Margin="271,101,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="3" Name="calculatorThreeButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="219,102,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="4" Name="calculatorFourButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="100,151,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="5" Name="calculatorFiveButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="160,151,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="6" Name="calculatorSixButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="219,151,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="-" Name="calculatorSubButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="271,151,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="7" Name="calculatorSevenButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="100,202,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="8" Name="calculatorEightButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="160,202,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="9" Name="calculatorNineButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="219,202,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="=" Name="calculatorEqualsButton" Click="CalculatorOperatorButton_Click" HorizontalAlignment="Left" Margin="271,202,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="0" Name="calculatorZeroButton" Click="CalculatorNumberButton_Click" HorizontalAlignment="Left" Margin="100,255,0,0" VerticalAlignment="Top" Height="37" Width="34" Grid.Column="1"/>
+        <Button Content="Clear" Name="calculatorClearButton" Click="CalculatorClearButton_Click" HorizontalAlignment="Left" Margin="219,255,0,0" VerticalAlignment="Top" Height="37" Width="85" Grid.Column="1"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="393,362,0,0" TextWrapping="Wrap" Name="playerChoiceStackTextBox" VerticalAlignment="Top" Width="58" Height="28"/>
-        <Label Content="Take from which stack?" HorizontalAlignment="Left" Margin="347,326,0,0" VerticalAlignment="Top"/>
-        <Label Content="How many matches?" HorizontalAlignment="Left" Margin="356,402,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox HorizontalAlignment="Left" Margin="393,447,0,0" Name="playerChoiceMatchesTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="58" Height="28"/>
-        <Button Content="Play!" HorizontalAlignment="Left" Name="playMatchesGameButton" Click="PlayMatchesGameButton_Click" Margin="356,496,0,0" VerticalAlignment="Top" Width="124"/>
-        <Label Content="" Name="resultMatchesGameLabel" HorizontalAlignment="Left" Margin="347,534,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="" Name="stackThreeCountLabel" HorizontalAlignment="Left" Margin="484,490,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="265" Margin="290,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="242"/>
+        <TextBox HorizontalAlignment="Left" Margin="185,362,0,0" TextWrapping="Wrap" Name="playerChoiceStackTextBox" VerticalAlignment="Top" Width="58" Height="28" Grid.Column="1"/>
+        <Label Content="Take from which stack?" HorizontalAlignment="Left" Margin="139,326,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="How many matches?" HorizontalAlignment="Left" Margin="148,402,0,0" VerticalAlignment="Top" Width="132" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="185,447,0,0" Name="playerChoiceMatchesTextBox" TextWrapping="Wrap"  VerticalAlignment="Top" Width="58" Height="28" Grid.Column="1"/>
+        <Button Content="Play!" HorizontalAlignment="Left" Name="playMatchesGameButton" Click="PlayMatchesGameButton_Click" Margin="148,496,0,0" VerticalAlignment="Top" Width="124" Grid.Column="1"/>
+        <Label Content="" Name="resultMatchesGameLabel" HorizontalAlignment="Left" Margin="139,534,0,0" VerticalAlignment="Top" Width="123" Grid.Column="1"/>
+        <Label Content="" Name="stackThreeCountLabel" HorizontalAlignment="Left" Margin="276,490,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="265" Margin="82,313,0,0" Stroke="Black" VerticalAlignment="Top" Width="242" Grid.Column="1"/>
 
-        <Button Content="Button 1" Name="randomNumberGeneratorOneButton" Click="RandomNumberGeneratorOneButton_Click" HorizontalAlignment="Left" Margin="325,669,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
-        <Button Content="Button 2" Name="randomNumberGeneratorTwoButton" Click="RandomNumberGeneratorTwoButton_Click" HorizontalAlignment="Left" Margin="427,669,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
-        <Rectangle HorizontalAlignment="Left" Height="146" Margin="288,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="244"/>
-        <Label Content="" Name="randomNumberGeneratorOneLabel" HorizontalAlignment="Left" Margin="342,593,0,0" VerticalAlignment="Top" Width="132"/>
-        <Label Content="" Name="randomNumberGeneratorTwoLabel" HorizontalAlignment="Left" Margin="342,629,0,0" VerticalAlignment="Top" Width="132"/>
+        <Button Content="Button 1" Name="randomNumberGeneratorOneButton" Click="RandomNumberGeneratorOneButton_Click" HorizontalAlignment="Left" Margin="117,669,0,0" VerticalAlignment="Top" Height="28" Width="60" Grid.Column="1"/>
+        <Button Content="Button 2" Name="randomNumberGeneratorTwoButton" Click="RandomNumberGeneratorTwoButton_Click" HorizontalAlignment="Left" Margin="219,669,0,0" VerticalAlignment="Top" Height="28" Width="60" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="146" Margin="80,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="244" Grid.Column="1"/>
+        <Label Content="" Name="randomNumberGeneratorOneLabel" HorizontalAlignment="Left" Margin="134,593,0,0" VerticalAlignment="Top" Width="132" Grid.Column="1"/>
+        <Label Content="" Name="randomNumberGeneratorTwoLabel" HorizontalAlignment="Left" Margin="134,629,0,0" VerticalAlignment="Top" Width="132" Grid.Column="1"/>
 
-        <Label Content="Nettoprijs:" HorizontalAlignment="Left" Margin="553,24,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="637,28,0,0" TextWrapping="Wrap" Name="nettoPriceTextBox" VerticalAlignment="Top" Width="120"/>
-        <CheckBox Content="Verlaagd tarief" Name="lowRateCheckBox" HorizontalAlignment="Left" Margin="637,58,0,0" VerticalAlignment="Top" Height="19" Width="120"/>
-        <Label Content="Btw:" HorizontalAlignment="Left" Margin="553,95,0,0" VerticalAlignment="Top" Width="47"/>
-        <Label Content="Totaal:" HorizontalAlignment="Left" Margin="553,138,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Name="btwPriceTextBox" Margin="637,100,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="21" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Name="totalPriceTextBox" Margin="637,143,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="19" Width="120"/>
-        <Button Content="Bereken" Name="calculateNettoPriceButton" Click="CalculateNettoPriceButton_Click" HorizontalAlignment="Left" Margin="674,174,0,0" VerticalAlignment="Top" Height="23" Width="83"/>
-        <Rectangle HorizontalAlignment="Left" Height="229" Margin="532,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
+        <Label Content="Nettoprijs:" HorizontalAlignment="Left" Margin="345,24,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="429,28,0,0" TextWrapping="Wrap" Name="nettoPriceTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <CheckBox Content="Verlaagd tarief" Name="lowRateCheckBox" HorizontalAlignment="Left" Margin="429,58,0,0" VerticalAlignment="Top" Height="19" Width="120" Grid.Column="1"/>
+        <Label Content="Btw:" HorizontalAlignment="Left" Margin="345,95,0,0" VerticalAlignment="Top" Width="47" Grid.Column="1"/>
+        <Label Content="Totaal:" HorizontalAlignment="Left" Margin="345,138,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Name="btwPriceTextBox" Margin="429,100,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="21" Width="120" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Name="totalPriceTextBox" Margin="429,143,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Height="19" Width="120" Grid.Column="1"/>
+        <Button Content="Bereken" Name="calculateNettoPriceButton" Click="CalculateNettoPriceButton_Click" HorizontalAlignment="Left" Margin="466,174,0,0" VerticalAlignment="Top" Height="23" Width="83" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="229" Margin="324,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="278" Grid.Column="1"/>
 
-        <Button Content="" Name="ticTacToeOneButton" Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="560,262,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="" Name="ticTacToeTwoButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="637,262,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="" Name="ticTacToeThreeButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="716,262,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="" Name="ticTacToeFourButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="560,322,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="" Name="ticTacToeFiveButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="637,322,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="" Name="ticTacToeSixButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="716,322,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="" Name="ticTacToeSevenButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="560,381,0,0" VerticalAlignment="Top" Height="50" Width="60" />
-        <Button Content="" Name="ticTacToeEightButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="637,381,0,0" VerticalAlignment="Top" Height="50" Width="60" />
-        <Button Content="" Name="ticTacToeNineButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="716,381,0,0" VerticalAlignment="Top" Height="50" Width="60"/>
-        <Button Content="X" Name="crossButton" Visibility="Visible" Click="GameCrossOrCircleButton_Click" HorizontalAlignment="Left" Margin="651,446,0,0" VerticalAlignment="Top" Height="25" Width="30"/>
-        <Button Content="O" Name="circleButton" Visibility="Visible" Click="GameCrossOrCircleButton_Click" HorizontalAlignment="Left" Margin="651,446,0,0" VerticalAlignment="Top" Height="25" Width="30"/>
-        <Label Content="" Name="statusTicTacToeGameLabel" HorizontalAlignment="Left" Margin="602,485,0,0" VerticalAlignment="Top" Width="130"/>
-        <Button Content="Restart!" Name="restartTicTacToeButton" Click="RestartTicTacToeButton_Click" Visibility="Hidden" HorizontalAlignment="Left" Margin="602,520,0,0" VerticalAlignment="Top" Width="130"/>
-        <Rectangle HorizontalAlignment="Left" Height="341" Margin="532,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
+        <Button Content="" Name="ticTacToeOneButton" Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="352,262,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="" Name="ticTacToeTwoButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="429,262,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="" Name="ticTacToeThreeButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="508,262,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="" Name="ticTacToeFourButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="352,322,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="" Name="ticTacToeFiveButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="429,322,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="" Name="ticTacToeSixButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="508,322,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="" Name="ticTacToeSevenButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="352,381,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1" />
+        <Button Content="" Name="ticTacToeEightButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="429,381,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1" />
+        <Button Content="" Name="ticTacToeNineButton"  Click="StoreTicTacToeOptionButton_Click" HorizontalAlignment="Left" Margin="508,381,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.Column="1"/>
+        <Button Content="X" Name="crossButton" Visibility="Visible" Click="GameCrossOrCircleButton_Click" HorizontalAlignment="Left" Margin="443,446,0,0" VerticalAlignment="Top" Height="25" Width="30" Grid.Column="1"/>
+        <Button Content="O" Name="circleButton" Visibility="Visible" Click="GameCrossOrCircleButton_Click" HorizontalAlignment="Left" Margin="443,446,0,0" VerticalAlignment="Top" Height="25" Width="30" Grid.Column="1"/>
+        <Label Content="" Name="statusTicTacToeGameLabel" HorizontalAlignment="Left" Margin="394,485,0,0" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <Button Content="Restart!" Name="restartTicTacToeButton" Click="RestartTicTacToeButton_Click" Visibility="Hidden" HorizontalAlignment="Left" Margin="394,520,0,0" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="341" Margin="324,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="278" Grid.Column="1"/>
 
-        <Label Content="" Name="showNumbersWithLoopLabel" HorizontalAlignment="Left" Margin="550,628,0,0" VerticalAlignment="Top" Height="26" Width="246"/>
-        <Button Content="Show numbers" Name="showNumbersWithLoopButton" Click="ShowNumbersWithLoopButton_Click" HorizontalAlignment="Left" Margin="626,588,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content= "" Name="showMoreNumbersLabel" HorizontalAlignment="Left" Margin="550,671,0,0" VerticalAlignment="Top" Width="246"/>
-        <Rectangle HorizontalAlignment="Left" Height="146" Margin="532,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
+        <Label Content="" Name="showNumbersWithLoopLabel" HorizontalAlignment="Left" Margin="342,628,0,0" VerticalAlignment="Top" Height="26" Width="246" Grid.Column="1"/>
+        <Button Content="Show numbers" Name="showNumbersWithLoopButton" Click="ShowNumbersWithLoopButton_Click" HorizontalAlignment="Left" Margin="418,588,0,0" VerticalAlignment="Top" Height="26" Grid.Column="1"/>
+        <Label Content= "" Name="showMoreNumbersLabel" HorizontalAlignment="Left" Margin="342,671,0,0" VerticalAlignment="Top" Width="246" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="146" Margin="324,578,0,0" Stroke="Black" VerticalAlignment="Top" Width="278" Grid.Column="1"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="838,45,0,0" Name="ShowRandomNumbersInLoopTextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="334"/>
-        <Button Content="Show random numbers" Name="ShowRandomNumbersInLoopButton" Click="ShowRandomNumbersInLoopButton_Click" HorizontalAlignment="Left" Margin="941,13,0,0" VerticalAlignment="Top"/>
-       
-        <TextBlock HorizontalAlignment="Left" Margin="875,106,0,0" TextWrapping="Wrap" Name="DrawTrapTextBlock" VerticalAlignment="Top" Height="146" Width="260"/>
-        <Button Content="Draw Trap" Name="DrawTrapButton" Click="DrawTrapButton_Click" HorizontalAlignment="Left" Margin="941,77,0,0" VerticalAlignment="Top" Width="127"/>
+        <TextBlock HorizontalAlignment="Left" Margin="630,55,0,0" Name="ShowRandomNumbersInLoopTextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Show random numbers" Name="ShowRandomNumbersInLoopButton" Click="ShowRandomNumbersInLoopButton_Click" HorizontalAlignment="Left" Margin="733,21,0,0" VerticalAlignment="Top" Grid.Column="1"/>
 
+        <TextBlock HorizontalAlignment="Left" Margin="630,112,0,0" TextWrapping="Wrap" Name="DrawTrapTextBlock" VerticalAlignment="Top" Height="111" Width="117" Grid.Column="1"/>
+        <Button Content="Draw Trap" Name="DrawTrapButton" Click="DrawTrapButton_Click" HorizontalAlignment="Left" Margin="630,85,0,0" VerticalAlignment="Top" Width="117" Grid.Column="1"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="230" Margin="602,9,0,0" Stroke="Black" VerticalAlignment="Top" Width="380" Grid.ColumnSpan="2"/>
+
+        <Label Grid.Column="1" Content="" Name="SumOfLoopLabel" HorizontalAlignment="Left" Margin="688,244,0,0" VerticalAlignment="Top" Width="50"/>
+        <Button Grid.Column="1" Content="Calculate" Name="CalculateSumOfLoopButton" Click="CalculateSumOfLoopButton_Click" HorizontalAlignment="Left" Margin="628,247,0,0" VerticalAlignment="Top"/>
+
+        <Button Grid.Column="1" Content="Draw Zigzaw" Name="DrawZigZawButton" Click="DrawZigZawButton_Click" HorizontalAlignment="Left" Margin="847,85,0,0" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="847,111,0,0" TextWrapping="Wrap"  Name="DrawZigZawTextBlock" Height="117" Width="117" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="627,295,0,0" TextWrapping="Wrap" Name="MultiplyTableTextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Grid.Column="1" Content="Draw" Name="DrawMultiplyTableButton" Click="DrawMultiplyTableButton_Click" HorizontalAlignment="Left" Margin="806,292,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="627,331,0,0" TextWrapping="Wrap" Name="MultiplyTableTextBlock" VerticalAlignment="Top" Height="216" Width="295"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="602,239,0,0" Stroke="Black" VerticalAlignment="Top" Width="380" Grid.ColumnSpan="2"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="303" Margin="602,272,0,0" Stroke="Black" VerticalAlignment="Top" Width="380" Grid.ColumnSpan="2"/>
+
+        
     </Grid>
 </Window>
