@@ -21,6 +21,7 @@ namespace PracticeAss2
     /// </summary>
     public partial class MainWindow : Window
     {
+        Random _random = new Random();
         public MainWindow()
         {
             InitializeComponent();
@@ -72,7 +73,6 @@ namespace PracticeAss2
         }
 
         private int _countThrows;
-        Random _randomNumberGen = new Random();
         private int _firstThrow;
         private int _secondThrow;
         private int _thirdThrow;
@@ -118,7 +118,7 @@ namespace PracticeAss2
         private void UpdateThrowState()
         {
 
-            int randomDiceNumber = _randomNumberGen.Next(1, 6);
+            int randomDiceNumber = _random.Next(1, 6);
 
             if (_countThrows >= 3)
             {
@@ -220,8 +220,6 @@ namespace PracticeAss2
         }
 
         //ROCK, PAPER, SCISSORS GAME
-
-        Random _randomGameGen = new Random();
         private const string PAPER_CHOICE = "Paper";
         private const string ROCK_CHOICE = "Rock";
         private const string SCISSOR_CHOICE = "Scissor";
@@ -279,7 +277,7 @@ namespace PracticeAss2
         }
         private void GenerateComputerChoice()
         {
-            int randomNumber = _randomGameGen.Next(1, 3);
+            int randomNumber = _random.Next(1, 3);
 
             switch (randomNumber)
             {
@@ -374,7 +372,6 @@ namespace PracticeAss2
         private int _stackOne = 0;
         private int _stackTwo = 0;
         private int _stackThree = 0;
-        Random _randomGenMatches = new Random();
         private bool _playerTurn;
         private bool _isGameOver;
 
@@ -404,7 +401,7 @@ namespace PracticeAss2
         {
 
             int computerChoiceStack = SelectComputerChoiceStack();
-            int computerChoiceMatches = _randomGenMatches.Next(1, 200);
+            int computerChoiceMatches = _random.Next(1, 200);
             _playerTurn = false;
 
             SubstractMatchesFromStack(computerChoiceStack, computerChoiceMatches);
@@ -438,15 +435,15 @@ namespace PracticeAss2
 
             if (_stackThree > 0 && _stackTwo > 0 && _stackOne > 0)
             {
-                return _randomGenMatches.Next(1, 3);
+                return _random.Next(1, 3);
             }
             else if (_stackTwo <= 0 && _stackOne > 0 && _stackThree > 0)
             {
-                return _randomGenMatches.Next(0, 2) == 0 ? 1 : 3;
+                return _random.Next(0, 2) == 0 ? 1 : 3;
             }
             else if (_stackThree <= 0 && _stackTwo > 0 && _stackOne > 0)
             {
-                return _randomGenMatches.Next(1, 2);
+                return _random.Next(1, 2);
             }
             else if (_stackThree > 0 && _stackTwo <= 0 && _stackOne <= 0)
             {
@@ -462,7 +459,7 @@ namespace PracticeAss2
             }
             else if (_stackOne <= 0 && _stackTwo > 0 && _stackThree > 0)
             {
-                return _randomGenMatches.Next(2, 3);
+                return _random.Next(2, 3);
             }
             return 0;
         }
@@ -509,9 +506,9 @@ namespace PracticeAss2
         {
             if (_stackOne == 0 && _stackTwo == 0 && _stackThree == 0)
             {
-                _stackOne = _randomGenMatches.Next(1, 200);
-                _stackTwo = _randomGenMatches.Next(1, 200);
-                _stackThree = _randomGenMatches.Next(1, 200);
+                _stackOne = _random.Next(1, 200);
+                _stackTwo = _random.Next(1, 200);
+                _stackThree = _random.Next(1, 200);
             }
         }
 
@@ -618,10 +615,14 @@ namespace PracticeAss2
             if (_changePlayer)
             {
                 _whichPlayerTurn = "Player 1";
+                circleButton.Visibility = Visibility.Hidden;
+                crossButton.Visibility = Visibility.Visible;
             }
             else
             {
                 _whichPlayerTurn = "Player 2";
+                crossButton.Visibility = Visibility.Hidden;
+                circleButton.Visibility = Visibility.Visible;
             }
         }
 
@@ -678,6 +679,46 @@ namespace PracticeAss2
             DecidePlayerTurn();
             ShowWhichPlayerTurn();
             restartTicTacToeButton.Visibility = Visibility.Hidden;
+        }
+
+        // numbers from 1 to 10 with loop
+        private void ShowNumbersWithLoopButton_Click(object sender, RoutedEventArgs e)
+        {
+            string numbers = "";
+            string moreNumbers = "";
+
+            for (int number = 1; number < 20; number++)
+            {
+                numbers += number.ToString() + " ";
+            }
+
+            for (int moreNumber = 255; moreNumber < 275; moreNumber++)
+            {
+                moreNumbers += moreNumber.ToString() + " ";
+            }
+
+            showNumbersWithLoopLabel.Content = numbers;
+
+            showMoreNumbersLabel.Content = moreNumbers;
+        }
+
+        // random numbers in loop
+        private void ShowRandomNumbersInLoopButton_Click(object sender, RoutedEventArgs e)
+        {
+            string randomNumbers = "";
+            
+            for (int i = 1; i < _random.Next(1,100); i++)
+            {
+                randomNumbers += i + ": " + _random.Next(1,100).ToString() + ", ";
+            }
+
+            ShowRandomNumbersInLoopTextBlock.Text = randomNumbers;
+        }
+
+        // create staircase with X's
+        private void DrawTrapButton_Click(object sender, RoutedEventArgs e)
+        {
+            string value = "";
         }
     }
 }
