@@ -849,7 +849,26 @@ namespace PracticeAss2
             SumOfSeriesLabel.Content = finalResult;
         }
 
+        //upside down staircase extra practise
+        private void DrawUpsideStaircaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            string finalResult = "";
+            int inputNumber;
+
+            inputNumber = Convert.ToInt32(InputDrawUpsideStaircaseTextBox.Text);
+
+            for (int i = inputNumber; i >= 1; i--)
+            {
+               
+                for (int j = 1; j <= i; j++) 
+                {
+                    finalResult += "X ";
+                }
+                finalResult += "\n";
+            }
 
 
+            ResultDrawUpsideStaircaseTextBox.Text = finalResult;
+        }
     }
 }
